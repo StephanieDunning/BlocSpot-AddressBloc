@@ -8,8 +8,17 @@ class AddressBook
      @entries = []
   end
 
-  def binary_search(name)
+  def iterative_search(name)
+    @entries.each do |entry|
+      if entry.name == name
+        return entry
+      end
+    end
 
+    return nil
+  end
+
+  def binary_search(name)
     lower = 0
     upper = entries.length - 1
 
